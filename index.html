@@ -1,0 +1,52 @@
+//Filename: index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voxel FPS</title>
+    <!-- FIX: Added a placeholder favicon to prevent 404 errors in the console -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="crosshair">+</div>
+    <div id="hud">
+        <div id="health-display">HP: <span id="playerHealth">200</span></div>
+        <div id="ammo-display">Ammo: <span id="playerAmmo">30 / 30</span></div>
+        <div id="wave-info">
+            <div>Wave: <span id="waveCount">0 / 5</span></div>
+            <div>Enemies: <span id="enemyCount">0</span></div>
+        </div>
+        <div id="shield-status"></div>
+    </div>
+    <div id="damage-indicator"></div>
+    <div id="wave-message"></div>
+    <canvas id="minimap"></canvas>
+    
+    <div id="pause-menu">
+        <h1 id="menuTitle">Voxel FPS</h1>
+        <button id="resumeButton">Resume / Start</button>
+        <button id="restartButton">Restart</button>
+        <div class="settings">
+            <label for="music-toggle">Music:</label>
+            <input type="checkbox" id="music-toggle" checked>
+            <label for="music-select" style="display:none;">Track:</label>
+            <select id="music-select" style="display:none;"></select>
+            <label for="sfx-select">SFX Pack:</label>
+            <select id="sfx-select">
+                <option value="synth" selected>Synth</option>
+                <option value="8bit">8-Bit</option>
+                <option value="realistic">Realistic</option>
+            </select>
+        </div>
+        <div class="controls-info">
+            WASD: Move | Shift: Sprint | C: Slide | R: Reload <br>
+            LMB: Shoot | RMB: Shield | Space: Jump | Esc: Pause
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
